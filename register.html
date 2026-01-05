@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Culinary Competition 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">🍽️ Culinary Competition 2025</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="rules.html">Competition Rules</a>
+                <a href="register.html" class="active">Register</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero rules-hero">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Register Now</h1>
+            <p class="hero-description">Join the culinary adventure of 2025</p>
+        </div>
+    </section>
+
+    <section class="register-section">
+        <div class="container">
+            <div class="form-container">
+                <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Registration Form</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="fullname">👤 Full Name *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">📧 Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">📱 Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">🎂 Age *</label>
+                        <input type="number" id="age" name="age" placeholder="16+" min="16" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">🏆 Choose Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select your category</option>
+                            <option value="student">Student Chef (16-25 years)</option>
+                            <option value="home">Home Chef (Amateur)</option>
+                            <option value="professional">Professional Chef</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dish">🍽️ Dish Name *</label>
+                        <input type="text" id="dish" name="dish" placeholder="What dish will you prepare?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ingredients">📄 Ingredients & Method *</label>
+                        <textarea id="ingredients" name="ingredients" rows="6" placeholder="List your main ingredients and a brief method description..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">👨‍🍳 Cooking Experience</label>
+                        <textarea id="experience" name="experience" rows="3" placeholder="Tell us about your cooking background (optional)"></textarea>
+                    </div>
+                    <div class="form-group" style="margin-top: 2rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="rules.html" style="color: var(--accent);">competition rules</a> and terms</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">🚀 Submit Registration</button>
+                </form>
+
+                <div id="successMessage" style="display: none; margin-top: 2rem; padding: 1.5rem; background: #d4edda; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #155724; margin-bottom: 0.5rem;">✅ Registration Successful!</h3>
+                    <p style="color: #155724;">Thank you for registering. We'll contact you soon with more details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Culinary Competition 2025</h3>
+                    <p>Celebrating culinary excellence and creativity</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="register.html">Register</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 info@culinarycomp.pk</p>
+                    <p>📱 +92 300 1234567</p>
+                    <p>📍 Lahore, Pakistan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Culinary Competition. Organized by AICT Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Image Preview
+        document.getElementById('dishPhoto').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const preview = document.getElementById('previewImage');
+            const label = document.querySelector('.file-upload-label');
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.add('show');
+                    label.textContent = '✅ Image Selected';
+                    label.style.background = 'var(--accent)';
+                    label.style.color = 'white';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Form Submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('previewImage').classList.remove('show');
+                document.querySelector('.file-upload-label').textContent = '📁 Choose Image';
+                document.querySelector('.file-upload-label').style.background = '';
+                document.querySelector('.file-upload-label').style.color = '';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Gallery - Culinary Competition 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">🍽️ Culinary Competition 2025</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="rules.html">Competition Rules</a>
+                <a href="register.html">Register</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero rules-hero">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Gallery</h1>
+            <p class="hero-description">Explore amazing dishes from our talented participants</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search dishes... (e.g., Biryani, Dessert, Chicken)">
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="recipe-card" data-name="chicken biryani" data-category="main course">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&h=250&fit=crop" alt="Chicken Biryani" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Chicken Biryani</h3>
+                        <p class="recipe-desc">Traditional Hyderabadi biryani with aromatic spices and juicy chicken pieces.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="chocolate lava cake dessert" data-category="dessert">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=250&fit=crop" alt="Chocolate Lava Cake" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Chocolate Lava Cake</h3>
+                        <p class="recipe-desc">Decadent dessert with molten chocolate center, perfectly rich and indulgent.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="butter chicken curry" data-category="main course">
+                    <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&h=250&fit=crop" alt="Butter Chicken" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Butter Chicken</h3>
+                        <p class="recipe-desc">Creamy tomato gravy with tender chicken pieces in aromatic spices.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="falooda drink dessert" data-category="dessert">
+                    <img src="flooda.png" alt="Falooda" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Falooda</h3>
+                        <p class="recipe-desc">Refreshing summer dessert with vermicelli, milk, ice cream and rose syrup.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="seekh kabab kebab" data-category="appetizer">
+                    <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=250&fit=crop" alt="Seekh Kebab" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Seekh Kabab</h3>
+                        <p class="recipe-desc">Juicy minced meat kebabs with special spices and fresh herbs.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="rasmalai dessert sweet" data-category="dessert">
+                    <img src="ras.png" alt="Rasmalai" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Rasmalai</h3>
+                        <p class="recipe-desc">Soft spongy cheese balls soaked in thickened sweetened milk.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="pasta italian" data-category="main course">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=250&fit=crop" alt="Pasta" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Creamy Pasta</h3>
+                        <p class="recipe-desc">Italian-style pasta with rich creamy sauce and fresh herbs.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="grilled salmon fish" data-category="main course">
+                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=250&fit=crop" alt="Grilled Salmon" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Grilled Salmon</h3>
+                        <p class="recipe-desc">Perfectly grilled salmon with lemon butter sauce and vegetables.</p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-name="tiramisu dessert coffee" data-category="dessert">
+                    <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=250&fit=crop" alt="Tiramisu" class="recipe-img">
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Tiramisu</h3>
+                        <p class="recipe-desc">Classic Italian dessert with layers of coffee-soaked ladyfingers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="noResults" style="display: none; text-align: center; padding: 3rem;">
+                <h3 style="color: var(--primary);">No recipes found</h3>
+                <p>Try searching with different keywords</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Culinary Competition 2025</h3>
+                    <p>Celebrating culinary excellence and creativity</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="register.html">Register</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 info@culinarycomp.pk</p>
+                    <p>📱 +92 300 1234567</p>
+                    <p>📍 Lahore, Pakistan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Culinary Competition. Organized by AICT Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const recipeCards = document.querySelectorAll('.recipe-card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            let visibleCount = 0;
+
+            recipeCards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                const category = card.getAttribute('data-category');
+                
+                if (name.includes(searchTerm) || category.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Show/hide no results message
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
