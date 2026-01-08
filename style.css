@@ -210,7 +210,7 @@ h1, h2, h3, h4 {
 .rules-hero {
     background: 
     url("back3.png");
-    padding: 0rem;
+    padding: 2rem 4rem;
     background-size: cover ;
     background-position: center top;
     min-height: 10vh; 
